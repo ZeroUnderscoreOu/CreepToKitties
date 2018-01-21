@@ -1,0 +1,34 @@
+Div.Stats {
+	Display: Flex;
+	Flex: None;
+	Flex-Wrap: Wrap;
+	Align-Items: Flex-End;
+	Justify-Content: Space-Between;
+	Margin: 50px;
+}
+Div.Stats::before {
+	Display: Block;
+	Width: 100%;
+	Color: Gray;
+	Content: Attr(Data-Before);
+	Margin: 10px 0px 10px 0px;
+}
+Div.Stats > Div {
+	Position: Relative; /* for inner divs positioning */
+	Width: 0.8%;
+	Overflow: Visible;
+	Font-Size: 10px;
+	Background-Color: #FF8000;
+}
+Div.Stats > Div::after {
+	Position: Absolute;
+	Right: 0px;
+	Bottom: 0px;
+	Content: Attr(Data-After);
+	Font-Size: 12px;
+	Line-Height: 1em;
+	Color: #404040;
+}
+Div.Stats > Div:first-child { /* hiding 0% */
+	Display: None;
+}
